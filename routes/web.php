@@ -9,6 +9,8 @@ use App\Http\Controllers\OdersController;
 use App\Http\Controllers\HomeController;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,56 +27,56 @@ Route::get('/', function () {
 });
 Route::get('trangchu',[
     'as'=>'trangchu',
-    'uses'=>'PagesController@getIndex'
+    'uses'=>'App\Http\Controllers\PagesController@getIndex'
 ]);
-// Route::get('trangchu', 'PagesController@getIndex');
-Route::get('trangchu', [PagesController::class, 'getIndex']);
+// Route::get('trangchu', 'App\Http\Controllers\PagesController@getIndex');
+// Route::get('trangchu', [PagesController::class, 'getIndex']);
 Route::get('loaisanpham',[
     'as'=>'loaisanpham',
-    'uses'=>'PagesController@getCategory'
+    'uses'=>'App\Http\Controllers\PagesController@getCategory'
 ]);
 Route::get('detail-product/{id}',[
     'as'=>'detailproduct',
-    'uses'=>'PagesController@getDetailProduct'
+    'uses'=>'App\Http\Controllers\PagesController@getDetailProduct'
 ]);
 Route::get('category/{id}',[
     'as'=>'category',
-    'uses'=>'PagesController@getCategory'
+    'uses'=>'App\Http\Controllers\PagesController@getCategory'
 ]);
 Route::get('contact',[
     'as'=>'contact',
-    'uses'=>'PagesController@getContact'
+    'uses'=>'App\Http\Controllers\PagesController@getContact'
 ]);
 Route::get('about',[
     'as'=>'about',
-    'uses'=>'PagesController@getAbout'
+    'uses'=>'App\Http\Controllers\PagesController@getAbout'
 ]);
 
 //phần này dành riêng cho admin
-Route::group(['prefix'=>'admin','middleware'=>['checklevel','auth']],function(){
+Route::group(['prefix'=>'admin','middleware'=>['App\Http\Middleware\CheckLevel','auth']],function(){
     Route::group(['prefix'=>'category'],function() {                        // route category
-        Route::get('list','CategoryController@getList')->name('catlist');
-        Route::get('create', 'CategoryController@create');
-        Route::post('create', 'CategoryController@store')->name('create'); // ở đây muốn truy cập được vào ROUTE từ controller hay view thì cần đặt định danh cho ROUTE
+        Route::get('list','App\Http\Controllers\CategoryController@getList')->name('catlist');
+        Route::get('create', 'App\Http\Controllers\CategoryController@create');
+        Route::post('create', 'App\Http\Controllers\CategoryController@store')->name('create'); // ở đây muốn truy cập được vào ROUTE từ controller hay view thì cần đặt định danh cho ROUTE
 
-        Route::get('edit/{id}','CategoryController@edit');
-        Route::post('edit/{id}','CategoryController@update');
-        Route::get('delete/{id}','CategoryController@delete');
+        Route::get('edit/{id}','App\Http\Controllers\CategoryController@edit');
+        Route::post('edit/{id}','App\Http\Controllers\CategoryController@update');
+        Route::get('delete/{id}','App\Http\Controllers\CategoryController@delete');
 
-        Route::get('{id}','CategoryController@show');
+        Route::get('{id}','App\Http\Controllers\CategoryController@show');
     });
     Route::group(['prefix'=>'product'],function() {                         // route product
-        Route::get('list','ProductController@getList');
-        Route::get('create', 'ProductController@create');
-        Route::post('create', 'ProductController@store')->name('create');
-        Route::get('edit/{id}','ProductController@edit');
-        Route::post('edit/{id}','ProductController@update');
-        Route::get('delete/{id}','ProductController@delete');
-        Route::get('{id}','ProductController@show');
+        Route::get('list','App\Http\Controllers\ProductController@getList');
+        Route::get('create', 'App\Http\Controllers\ProductController@create');
+        Route::post('create', 'App\Http\Controllers\ProductController@store')->name('create');
+        Route::get('edit/{id}','App\Http\Controllers\ProductController@edit');
+        Route::post('edit/{id}','App\Http\Controllers\ProductController@update');
+        Route::get('delete/{id}','App\Http\Controllers\ProductController@delete');
+        Route::get('{id}','App\Http\Controllers\ProductController@show');
     });
     Route::group(['prefix'=>'user'],function() {                         // route product
-        Route::get('list','UsersController@getList')->name('userlist');
-        Route::get('{id}','UsersController@show');
+        Route::get('list','App\Http\Controllers\UsersController@getList')->name('userlist');
+        Route::get('{id}','App\Http\Controllers\UsersController@show');
     });
 
 
@@ -83,36 +85,36 @@ Route::group(['prefix'=>'admin','middleware'=>['checklevel','auth']],function(){
 //thêm vào giỏ hàng
 Route::get('add-to-cart/{id}',[
     'as'=>'addtocart',
-    'uses'=>'PagesController@AddToCart'
+    'uses'=>'App\Http\Controllers\PagesController@AddToCart'
 ]);
 Route::get('delete-cart/{id}',[
     'as'=>'deletecart',
-    'uses'=>'PagesController@DelItemCart'
+    'uses'=>'App\Http\Controllers\PagesController@DelItemCart'
 ]);
 
 //auth
 // Route::get('login',[
 //     'as'=>'login',
-//     'uses'=>'PagesController@login'
+//     'uses'=>'App\Http\Controllers\PagesController@login'
 // ]);
 Route::get('login', [PagesController::class, 'login'])->name('login');
 
 // Route::post('login',[
 //     'as'=>'login',
-//     'uses'=>'PagesController@postlogin'
+//     'uses'=>'App\Http\Controllers\PagesController@postlogin'
 // ]);
 Route::post('login', [PagesController::class, 'postlogin'])->name('login');
 Route::get('register',[
     'as'=>'register',
-    'uses'=>'PagesController@register'
+    'uses'=>'App\Http\Controllers\PagesController@register'
 ]);
 Route::post('register',[
     'as'=>'register',
-    'uses'=>'PagesController@postregister'
+    'uses'=>'App\Http\Controllers\PagesController@postregister'
 ]);
 Route::get('logout',[
     'as'=>'logout',
-    'uses'=>'PagesController@postLogout'
+    'uses'=>'App\Http\Controllers\PagesController@postLogout'
 ]);
 //endauth
 
@@ -120,28 +122,28 @@ Route::get('logout',[
 Route::get('search',
     [
         'as'=>'search',
-        'uses'=>'PagesController@getSearch'
+        'uses'=>'App\Http\Controllers\PagesController@getSearch'
     ]);
 Route::get('dathang',
     [
         'as'=>'dathang',
-        'uses'=>'OdersController@getCheckOut'
+        'uses'=>'App\Http\Controllers\OdersController@getCheckOut'
     ])->middleware('auth');
 Route::post('dathang',
     [
         'as'=>'dathang',
-        'uses'=>'OdersController@postCheckOut'
+        'uses'=>'App\Http\Controllers\OdersController@postCheckOut'
     ])->middleware('auth');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 // Route::get('historybuy',[
 //     'as'=>'historybuy',
-//     'uses'=>'PagesController@historybuy'
+//     'uses'=>'App\Http\Controllers\PagesController@historybuy'
 // ])->middleware('auth');
 Route::get('historybuy', [PagesController::class,'historybuy'])->name('historybuy');
-Route::get('background/{id}','UsersController@background')->middleware('auth');
-Route::get('changepass/{id}','UsersController@changepass1')->middleware('auth');
-Route::post('changepass/{id}','UsersController@changepass')->middleware('auth');
+Route::get('background/{id}','App\Http\Controllers\UsersController@background')->middleware('auth');
+Route::get('changepass/{id}','App\Http\Controllers\UsersController@changepass1')->middleware('auth');
+Route::post('changepass/{id}','App\Http\Controllers\UsersController@changepass')->middleware('auth');
 

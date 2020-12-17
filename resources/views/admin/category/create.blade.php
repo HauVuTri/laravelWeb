@@ -12,7 +12,7 @@
                 <div class="col-lg-7" style="padding-bottom:120px">
 
                     @include('admin.layout.messages')
-                    <form action="{{action('CategoryController@store')}}" method="post">
+                    <form action="{{action('App\Http\Controllers\CategoryController@store')}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label>Tên thể loại</label>

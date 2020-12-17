@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use App\Models\Bill_detail;
-use App\Cart;
-use App\Oders;
+use App\Models\Cart;
+use App\Models\Oders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;

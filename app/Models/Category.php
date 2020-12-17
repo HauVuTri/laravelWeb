@@ -11,7 +11,7 @@ class Category extends Model
 	
 	public function products()
 	{
-		return $this->hasMany('App\Products','cat_id');
+		return $this->hasMany('App\Models\Products','cat_id');
 	}
 	public function news()
 	{

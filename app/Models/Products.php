@@ -11,19 +11,19 @@ class Products extends Model
 
 	public function category()
 	{
-		return $this->belongsTo('App\Category','cat_id','id');
+		return $this->belongsTo('App\Models\Category','cat_id','id');
 	}
 	public function pro_details()
     {
-        return $this->hasOne('App\Pro_details','pro_id','id');
+        return $this->hasOne('App\Models\Pro_details','pro_id','id');
     }
     public function detail_img()
     {
-        return $this->hasMany('App\Detail_img','pro_id','id');
+        return $this->hasMany('App\Models\Detail_img','pro_id','id');
     }
     public function oders_detail()
     {
-        return $this->hasOne('App\Oders_detail','pro_id','id');
+        return $this->hasOne('App\Models\Oders_detail','pro_id','id');
     }
 
     public function bill_detail()

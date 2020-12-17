@@ -11,6 +11,6 @@ class Pro_details extends Model
 
     public function products()
     {
-        return $this->belongsTo('App\Products','pro_id','id');
+        return $this->belongsTo('App\Models\Products','pro_id','id');
 	}
 }

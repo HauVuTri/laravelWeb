@@ -11,11 +11,11 @@ class Oders_detail extends Model
 
 	 public function oders()
     {
-        return $this->belongsTo('App\Oders','o_id');
+        return $this->belongsTo('App\Models\Oders','o_id');
     }
 
     public function products()
     {
-        return $this->hasOne('App\Products','pro_id');
+        return $this->hasOne('App\Models\Products','pro_id');
     }
 }

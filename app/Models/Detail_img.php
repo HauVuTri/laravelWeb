@@ -11,6 +11,6 @@ class Detail_img extends Model
 
 	public function products()
     {
-        return $this->belongsTo('App\Products','pro_id');
+        return $this->belongsTo('App\Models\Products','pro_id');
     }
 }

@@ -10,7 +10,7 @@ class Bill extends Model
 
     public function users()
     {
-        return $this->belongsTo('App\Users','id_user','id');
+        return $this->belongsTo('App\Models\Users','id_user','id');
     }
 
     public function bill_detail()
