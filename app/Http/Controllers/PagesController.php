@@ -68,6 +68,9 @@ class PagesController extends Controller
     {
         return view('page.gioi_thieu');
     }*/
+    /** 
+     * Xử lý thêm vào giỏ hàng
+     */
     public function AddToCart(Request $req,$id)
     {
         $product= Products::find($id);
@@ -78,6 +81,9 @@ class PagesController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Xóa sản phẩm khỏi giỏ hàng
+     */
     public function DelItemCart($id)
     {
         $oldCart=Session::has('cart')?Session::get('cart'):null;
@@ -86,12 +92,16 @@ class PagesController extends Controller
         Session::put('cart',$cart);
     return redirect()->back();
     }
-
+    /**
+     * Route đăng ký
+     */
     public function register()
     {
         return view('auth.register');
     }
-
+    /**
+     * Xử lý đăng ký với para truyền vào
+     */
     public function postregister(Request $request)
     {
         $this->validate($request,[
@@ -120,10 +130,17 @@ class PagesController extends Controller
            return redirect()->back()->with('success','Đăng kí thành công');
     }
 
+    /**
+     * Route Login
+     */
     public function login()
     {
         return view('auth.login');
     }
+
+    /**
+     * method Post của Login
+     */
     public function postlogin(Request $request)
     {
         $this->validate($request,[
@@ -145,18 +162,27 @@ class PagesController extends Controller
 
     }
 
+    /**
+     * Xử lý logout
+     */
     public function postLogout()
     {
         Auth::logout();
         return redirect()->route('trangchu');
     }
 
+    /**
+     * Hàm tìm kiếm sản phẩm dựa vào tên
+     */
     public function getSearch(Request $request)
     {
         $product=Products::where('name','like','%'.$request->key.'%')->orWhere('intro','like','%'.$request->key.'%')->orWhere('tag','like','%'.$request->key.'%')->get();
         return view('search')->with('product',$product);
     }
-
+     
+    /**
+     * Lấy lịch sử mua hàng của User
+     */
     public function historybuy()
     {
         $id=Auth::user()->id;
