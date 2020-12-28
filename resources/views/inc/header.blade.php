@@ -3,6 +3,7 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
+                    <li><a class="p-0 m-0" href="/trangchu" id="logo"><img src="source/image/logo/thegioididong.png" width="40px" height="40px" alt=""></a></li>
                     <li><a href=""><i class="fa fa-home"></i>MinhUKShop</a></li>
                     <li><a href=""><i class="fa fa-phone"></i>0988888888</a></li>
                 </ul>
@@ -31,7 +32,6 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="" width=100px" height="100px" alt=""></a> {{--LÔ GÔ CHƯA CÓ--}}
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
