@@ -16,7 +16,7 @@
     <link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-
+    @stack('styles')
      <!-- Styles -->
      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -71,5 +71,6 @@
         )
     })
 </script>
+@stack('scripts')
 </body>
 </html>
