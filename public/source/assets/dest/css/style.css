@@ -4250,11 +4250,14 @@ left:0
 }
 
 .copyright {
-background:#1a1a1a;
-height:50px;
-color:#fff;
-line-height:50px;
-overflow:hidden
+    width: 100%;
+    /* position: fixed; */
+    bottom: 0px;
+    background: #1a1a1a;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    overflow: hidden;
 }
 
 .pay-options a {
@@ -4397,6 +4400,9 @@ margin-bottom:10px
 
 .container {
 width:400px;
+background-color: #C6E6F1;
+padding: 70px;
+
 }
 
 .content {
@@ -4625,9 +4631,12 @@ float:left!important
 ============================================================================= */
 
 #footer {
+/* position: fixed; */
+bottom: 40px;
+width: 100%;
 background:#172431;
 color:#7b8fa3;
-padding:40px 0 50px
+padding:20px 0 20px
 }
 
 #footer a {
