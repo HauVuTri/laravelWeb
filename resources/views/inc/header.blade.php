@@ -52,25 +52,28 @@
                                 @endif
                                 <i class="fa fa-chevron-down"></i></div>
                             <div class="beta-dropdown cart-body">
-
-                                {{-- @foreach($product_cart as $product)
-                                    <div class="cart-item">
-                                        <a class="cart-item-delete"
-                                           href="{{route('deletecart',$product['item']['id'])}}"><i
-                                                    class="fa fa-times"></i> </a>
-                                        <div class="media">
-                                            <a class="pull-left" href="#"><img
-                                                        src="source/image/product/{{$product['item']['images']}}"
-                                                        alt=""></a>
-                                            <div class="media-body">
-                                                <span class="cart-item-title">{{$product['item']['name']}}</span>
-                                                <span class="cart-item-amount">{{$product['qty']}}
-                                                    *<span>{{$product['item']['price']}}</span></span>
+                            {{-- {{$product_cart}} --}}
+                                @isset($product_cart)
+                                    @foreach($product_cart as $product)
+                                        <div class="cart-item">
+                                            <a class="cart-item-delete"
+                                            href="{!! route('deletecart',$product['item']['id'])!!}"><i
+                                                        class="fa fa-times"></i> </a>
+                                            <div class="media">
+                                                <a class="pull-left" href="#"><img
+                                                            src="source/image/product/{{$product['item']['images']}}"
+                                                            alt=""></a>
+                                                <div class="media-body">
+                                                    <span class="cart-item-title">{{$product['item']['name']}}</span>
+                                                    <span class="cart-item-amount">{{$product['qty']}}
+                                                        *<span>{{$product['item']['price']}}</span></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach --}}
+                                    @endforeach
 
+                                @endisset
+                                {{-- {!!Session('cart')!!} --}}
                                 <div class="cart-caption">
                                     <div class="cart-total text-right">Tổng tiền: <span
                                                 class="cart-total-value">{{number_format(Session('cart')->totalPrice)}}

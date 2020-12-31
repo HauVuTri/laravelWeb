@@ -14,14 +14,13 @@
             <div class="clearfix"></div>
         </div>
     </div>
+<div class="row d-flex justify-content-center">
 
-    <div class="container">
+    <div class="col-6">
         <div id="content">
-        
             <form action="{{url('login')}}" method="post" class="beta-form-checkout">
                 {{csrf_field()}}
-                <div class="row">
-                    <div class="col-sm-3"></div>
+                <div class="row d-flex justify-content-center">
                     @if(count($errors)>0)
                         <div class="alert alert-danger">
                             @foreach($errors->all()  as $error)
@@ -30,10 +29,16 @@
                         </div>
                     @endif
                     @if(Session::has('success'))
+                    <div class="col-12">
                         <div class="alert alert-success">{{Session::get('success')}}</div>
+
+                    </div>
                     @endif
                     @if(Session::has('fail'))
+                    <div class="col-12">
                         <div class="alert alert-danger">{{Session::get('fail')}}</div>
+
+                    </div>
                     @endif
                     <div class="col-sm-6">
                         <h4>Đăng nhập</h4>
@@ -53,20 +58,19 @@
                         </div>
                         {{-- <form> --}}
                             {{-- <div class="form-group">
-                              <label for="exampleInputEmail1">Email</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter email">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputPassword1">Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              <label for="password">Password</label>
+                              <input type="password" class="form-control" id="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button> --}}
+                            <button type="submit" class="btn btn-primary">Login</button> --}}
                           {{-- </form> --}}
                     </div>
-                    <div class="col-sm-3"></div>
                 </div>
             </form>
         </div> <!-- #content -->
     </div> <!-- .container -->
+</div>
 @endsection
