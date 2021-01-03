@@ -45,131 +45,157 @@
                 <div class="main-content">
                     {{-- <div class="space60">&nbsp;</div> --}}
                     <div class="row m-0 ">
-                        <div class="col-sm-12" style="
-                            border: solid 1px red;
-                            border-radius: 6px;
-                        ">
-                            <div class="beta-products-list">
-                                <h4>Mobile</h4>
-                                <div class="beta-products-details">
-                                    <p class="pull-left">Tìm thấy {{ count($mobile) }} sản phẩm</p>
-                                    <div class="clearfix"></div>
+                        <div class="col-sm-12" style="border-radius: 4px;">
+                            <div class="beta-products-list mb-2 mt-3">
+                                <div class="navigat">
+                                    <div class="title">
+                                        <h2 class="mt-0">Điện thoại</h2>
+
+                                    </div>
                                 </div>
-    
-                                <div class="row">
-                                    @foreach ($mobile as $mob)
-                                        <div class="col-sm-3">
-                                            <div class="single-item">
-                                                <div class="single-item-header">
-                                                    <a href="{{ route('detailproduct', $mob->id) }}"><img
-                                                            src="source/image/product/{{ $mob->images }}" alt=""
-                                                            style="height: 250px;"></a>
-                                                </div>
-                                                <div class="single-item-body">
-                                                    <p class="single-item-title">{{ $mob->name }}</p>
-                                                    <p class="single-item-price">
-                                                        <span>{{ number_format($mob->price) }} đồng</span>
-                                                    </p>
-                                                </div>
-                                                <div class="single-item-caption">
-                                                    <a class="add-to-cart pull-left"
-                                                        href="{{ route('addtocart', $mob->id) }}"><i
-                                                            class="fa fa-shopping-cart"></i></a>
-                                                    <a class="beta-btn primary"
-                                                        href="{{ route('detailproduct', $mob->id) }}">Chi tiết <i
-                                                            class="fa fa-chevron-right"></i></a>
-                                                    <div class="clearfix"></div>
+                                @isset($mobile)
+                                    <div class="beta-products-details">
+                                        <p class="pull-left">Tìm thấy {{ count($mobile) }} sản phẩm</p>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        @foreach ($mobile as $mob)
+                                            <div class="col-sm-3 mt-3">
+                                                <div class="single-item">
+                                                    <div class="single-item-header">
+                                                        <a href="{{ route('detailproduct', $mob->id) }}"><img
+                                                                src="source/image/product/{{ $mob->images }}" alt=""
+                                                                style="height: 250px;"></a>
+                                                    </div>
+                                                    <div class="single-item-body">
+                                                        <p class="single-item-title">{{ $mob->name }}</p>
+                                                        <p class="single-item-price">
+                                                            <span>{{ number_format($mob->price) }} đồng</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="single-item-caption">
+                                                        <a class="add-to-cart pull-left"
+                                                            href="{{ route('addtocart', $mob->id) }}"><i
+                                                                class="fa fa-shopping-cart"></i></a>
+                                                        <a class="beta-btn primary"
+                                                            href="{{ route('detailproduct', $mob->id) }}">Chi tiết <i
+                                                                class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="paginate-div d-flex justify-content-center align-item-center mt-3">
-                                    {{ $mobile->links() }}
-    
-                                </div>
+                                        @endforeach
+
+                                    </div>
+                                    <div
+                                        class="paginate-div d-flex justify-content-center align-item-center mt-3 ">
+                                        {{ $mobile->links() }}
+
+                                    </div>
+
+                                @endisset
                             </div> <!-- .beta-products-list -->
-    
-                            <div class="space50">&nbsp;</div>
-    
-                            <div class="beta-products-list">
-                                <h4>Laptop</h4>
-                                <div class="beta-products-details">
-                                    <p class="pull-left">Tìm thấy {{ count($laptop) }} sản phẩm</p>
-                                    <div class="clearfix"></div>
+
+                            {{-- <div class="space50">&nbsp;</div>
+                            --}}
+
+                            <div class="beta-products-list mb-2">
+                                <div class="navigat">
+                                    <h2 class="mt-0">Laptop</h2>
                                 </div>
-                                <div class="row">
-                                    @foreach ($laptop as $lap)
-                                        <div class="col-sm-3">
-                                            <div class="single-item">
-                                                <div class="single-item-header">
-                                                    <a href="{{ route('detailproduct', $lap->id) }}"><img
-                                                            src="source/image/product/{{ $lap->images }}" alt=""
-                                                            height="250px"></a>
-                                                </div>
-                                                <div class="single-item-body">
-                                                    <p class="single-item-title">{{ $lap->name }}</p>
-                                                    <p class="single-item-price">
-                                                        <span>{{ number_format($lap->price) }} đồng</span>
-                                                    </p>
-                                                </div>
-                                                <div class="single-item-caption">
-                                                    <a class="add-to-cart pull-left"
-                                                        href="{{ route('addtocart', $mob->id) }}"><i
-                                                            class="fa fa-shopping-cart"></i></a>
-                                                    <a class="beta-btn primary"
-                                                        href="{{ route('detailproduct', $mob->id) }}">Chi tiết <i
-                                                            class="fa fa-chevron-right"></i></a>
-                                                    <div class="clearfix"></div>
+                                @isset($laptop)
+                                    <div class="beta-products-details">
+                                        <p class="pull-left">Tìm thấy {{ count($laptop) }} sản phẩm</p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="row">
+                                        @foreach ($laptop as $lap)
+                                            <div class="col-sm-3 mt-3">
+                                                <div class="single-item">
+                                                    <div class="single-item-header">
+                                                        <a href="{{ route('detailproduct', $lap->id) }}"><img
+                                                                src="source/image/product/{{ $lap->images }}" alt=""
+                                                                height="250px"></a>
+                                                    </div>
+                                                    <div class="single-item-body">
+                                                        <p class="single-item-title">{{ $lap->name }}</p>
+                                                        <p class="single-item-price">
+                                                            <span>{{ number_format($lap->price) }} đồng</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="single-item-caption">
+                                                        <a class="add-to-cart pull-left"
+                                                            href="{{ route('addtocart', $lap->id) }}"><i
+                                                                class="fa fa-shopping-cart"></i></a>
+                                                        <a class="beta-btn primary"
+                                                            href="{{ route('detailproduct', $lap->id) }}">Chi tiết <i
+                                                                class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
-    
-    
+                                        @endforeach
+
+
+
+                                    </div>
+                                    <div class="paginate-div d-flex justify-content-center align-item-center mt-3">
+                                        {{ $laptop->links() }}
+                                    </div>
+
+                                @endisset
+                            </div>
+                            {{-- <div class="space40">&nbsp;</div>
+                            --}}
+                            <div class="beta-products-list mb-2">
+                                <div class="navigat">
+                                    <h2 class="mt-0">PC</h2>
                                 </div>
-                                <div class="paginate-div d-flex justify-content-center align-item-center mt-3">
-                                {{ $laptop->links() }}
-                                </div>
-    
-                                <div class="space40">&nbsp;</div>
-                                <div class="row">
-                                    @foreach ($pc as $lap)
-                                        <div class="col-sm-3">
-                                            <div class="single-item">
-                                                <div class="single-item-header">
-                                                    <a href="{{ route('detailproduct', $lap->id) }}"><img
-                                                            src="source/image/product/{{ $lap->images }}" alt=""
-                                                            height="250px"></a>
-                                                </div>
-                                                <div class="single-item-body">
-                                                    <p class="single-item-title">{{ $lap->name }}</p>
-                                                    <p class="single-item-price">
-                                                        <span>{{ number_format($lap->price) }} đồng</span>
-                                                    </p>
-                                                </div>
-                                                <div class="single-item-caption">
-                                                    <a class="add-to-cart pull-left"
-                                                        href="{{ route('addtocart', $mob->id) }}"><i
-                                                            class="fa fa-shopping-cart"></i></a>
-                                                    <a class="beta-btn primary"
-                                                        href="{{ route('detailproduct', $mob->id) }}">Chi tiết <i
-                                                            class="fa fa-chevron-right"></i></a>
-                                                    <div class="clearfix"></div>
+                                @isset($pc)
+                                    <div class="beta-products-details">
+                                        <p class="pull-left">Tìm thấy {{ count($pc) }} sản phẩm</p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="row">
+                                        @foreach ($pc as $lap)
+                                            <div class="col-sm-3 mt-3">
+                                                <div class="single-item">
+                                                    <div class="single-item-header">
+                                                        <a href="{{ route('detailproduct', $lap->id) }}"><img
+                                                                src="source/image/product/{{ $lap->images }}" alt=""
+                                                                height="250px"></a>
+                                                    </div>
+                                                    <div class="single-item-body">
+                                                        <p class="single-item-title">{{ $lap->name }}</p>
+                                                        <p class="single-item-price">
+                                                            <span>{{ number_format($lap->price) }} đồng</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="single-item-caption">
+                                                        <a class="add-to-cart pull-left"
+                                                            href="{{ route('addtocart', $lap->id) }}"><i
+                                                                class="fa fa-shopping-cart"></i></a>
+                                                        <a class="beta-btn primary"
+                                                            href="{{ route('detailproduct', $lap->id) }}">Chi tiết <i
+                                                                class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
-    
-                                </div>
-                                <div class="paginate-div d-flex justify-content-center align-item-center mt-3">
-                                {{ $pc->links() }}
-                                </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="paginate-div d-flex justify-content-center align-item-center mt-3">
+                                        {{ $pc->links() }}
+                                    </div>
+
+                                @endisset
+
                             </div> <!-- .beta-products-list -->
                         </div>
                     </div> <!-- end section with sidebar and main content -->
-    
-    
+
+
                 </div> <!-- .main-content -->
             </div> <!-- #content -->
         </div> <!-- .container -->

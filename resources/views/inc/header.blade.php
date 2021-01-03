@@ -105,23 +105,23 @@
                     <li><a href="{{url('trangchu')}}">Trang chủ</a></li>
                     <li><a href="#">Điện thoại</a>
                         <ul class="sub-menu">
-                            {{-- @foreach($mobile as $row)
+                            @foreach($mobile as $row)
                                 <li><a href="{{route('category',$row->id)}}">{{$row->name}}</a></li>
-                            @endforeach --}}
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="#">Laptop</a>
                         <ul class="sub-menu">
-                            {{-- @foreach($laptop as $row)
+                            @foreach($laptop as $row)
                                 <li><a href="{{route('category',$row->id)}}">{{$row->name}}</a></li>
-                            @endforeach --}}
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="#">PC</a>
                         <ul class="sub-menu">
-                            {{-- @foreach($pc as $row)
+                            @foreach($pc as $row)
                                 <li><a href="{{route('category',$row->id)}}">{{$row->name}}</a></li>
-                            @endforeach --}}
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="{{route('about')}}">Giới thiệu</a></li>

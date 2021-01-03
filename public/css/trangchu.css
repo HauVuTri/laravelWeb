@@ -3,11 +3,29 @@
     width: 100px; */
 }
 .main-content-page{
-    background-color: #f0f0f0;
+    background-color: #ffe7ab  ;
+    background: #ffe7ab url(https://www.thegioididong.com/Content/newYear2020/bg-v3.png) center top;
+    
+}       
+.main-content-page #content {
+    background-color:#ffe7ab ;
     
 }
-.main-content-page .container{
-    background-color:#fff;
+.main-content-page #content .beta-products-list {
+    background-color:#ffffff ;
+    border-radius: 6px;
+    padding: 15px;
+    
     
 }
-
+.main-content-page #content .beta-products-list .navigat {
+    height: 40px;
+    width: 100%;
+}
+.main-content-page #content .beta-products-list .navigat .title{
+    height: 40px;
+    width: 300px;
+}
+.paginate-div{
+      height: 40px;  
+}
