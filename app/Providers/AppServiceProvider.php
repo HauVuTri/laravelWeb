@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
 
         Schema::defaultStringLength(191);
 
-        view()->composer('inc.header', function ($view) { // dùng cái này để chia sẻ dữ liệu với 1 view chỉ định
+        view()->composer('inc.header', function ($view) { // dùng cái này để chia sẻ dữ liệu với 1 view chỉ định(Dữ liệu này chia sẻ vì đa số các trang đều xử dụng)
             $slide = Slide::all();
             $categorychung = Category::where('parent_id', '=', 0)->get();
             $mobile = Category::where('parent_id', '=', 1)->get();
